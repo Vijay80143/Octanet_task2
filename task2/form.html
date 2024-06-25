@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background: url('p1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        form input, form select {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 48%;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 1); /* White background */
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        
+        form button {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        form button:hover {
+            background: #333;
+        }
+        
+        #taskList {
+            margin-top: 20px;
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .task {
+            background: transparent;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 5px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .task p {
+            margin: 5px 0;
+        }
+        
+        .task .priority {
+            font-weight: bold;
+        }
+        
+        .task .label {
+            background: white;
+            color: black;
+            padding: 3px 7px;
+            border-radius: 3px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        
+        .task .days-left {
+            font-size: 14px;
+            color: black;
+        }
+        
+        .task.completed {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        
+        .task .btn-group {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .task .edit-btn, .task .delete-btn {
+            background: white;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        
+        .task .edit-btn:hover, .task .delete-btn:hover {
+            background: rgba(0, 0, 255, 0.285);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Todo List</h1>
+        <div id="taskFormContainer">
+            <form id="taskForm">
+                <input type="text" id="taskName" placeholder="Task Name" required>
+                <input type="date" id="deadline" required>
+                <select id="priority" required>
+                    <option value="" disabled selected>Priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <input type="text" id="label" placeholder="Label" required>
+                <button type="submit"><i class="fas fa-plus"></i> Add Task</button>
+            </form>
+        </div>
+        
+        <div id="taskList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
